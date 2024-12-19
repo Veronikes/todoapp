@@ -6,14 +6,14 @@ class Main {
     constructor() {
         console.log("Inicializace");
 
-        this.nacti();
+        this.load();
     }
 
-    nacti() {
+    load() {
         this.#todos = localStorage.getItem("todos");
     }
 
-    uloz() {
+    save() {
         localStorage.setItem("todos", this.#todos);
    }
 }
