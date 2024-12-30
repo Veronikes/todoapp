@@ -10,6 +10,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		  rel="stylesheet">
 
+	<script src="src/managers/taskListManager.js"></script>
+	<script src="src/models/task.js"></script>
+	<script src="src/models/taskList.js"></script>
+	<script src="src/storage.js"></script>
+	<script src="src/main.js"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
@@ -22,7 +27,6 @@
 			}
 		}
 	</script>
-	<script src="index.js" type="application/javascript"></script>
 	<title>Todo app</title>
 </head>
 <body class="font-['Open_Sans']">
@@ -122,36 +126,15 @@
 
 				<div class="flex flex-row items-center gap-4">
 					<input type="text" class="border border-neutral-200 w-full rounded-lg p-2"
+						   id="task-name"
 						   placeholder="Přidat úkol...">
+					<button type="button" id="add-task">Přidat</button>
 				</div>
-				<div class="flex flex-col divide-y text-neutral-600 font-medium">
-					<div class="flex flex-row justify-between gap-2 p-2">
-						<div class="flex flex-col">
-							<span>Můj ukol 1</span>
-							<div class="text-xs text-neutral-500 font-normal flex flex-row items-center gap-1">
-								<span class="bg-cyan-400 rounded w-3 h-3"></span>
-								<span>Pracovní</span>
-							</div>
-						</div>
-						<input id="checkbox" type="checkbox">
+				<div>
+					<div id="task-list-empty" class="flex flex-col items-center bg-neutral-50 rounded-lg p-8 text-neutral-400">
+						<span>Zatím nemáš přidaný žádný úkol!</span>
 					</div>
-					<div class="flex flex-row justify-between gap-2 p-2">
-						<span>Můj ukol 2</span>
-						<input type="checkbox"/>
-					</div>
-					<div class="flex flex-row justify-between gap-2 p-2">
-						<div class="flex flex-col">
-							<span>Můj ukol 3</span>
-							<div class="text-xs text-neutral-500 font-normal flex flex-row items-center gap-1">
-								<span class="bg-rose-400 rounded w-3 h-3"></span>
-								<span>Osobní</span>
-							</div>
-						</div>
-						<input type="checkbox"/>
-					</div>
-					<div class="flex flex-row justify-between gap-2 p-2">
-						<span>Můj ukol 4</span>
-						<input type="checkbox"/>
+					<div class="flex flex-col divide-y text-neutral-600 font-medium" id="task-list">
 					</div>
 				</div>
 			</div>
