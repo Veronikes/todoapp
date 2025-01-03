@@ -1,4 +1,4 @@
-class TaskListManager {
+class TaskManager {
 
     constructor() {
         this.renderTasks();
@@ -35,7 +35,6 @@ class TaskListManager {
     renderTask(task) {
         const listElement = document.getElementById('task-list');
         let temp = document.createElement('div');
-        console.log(task);
         temp.innerHTML = task.render();
         listElement.appendChild(temp.firstElementChild);
         this.toggleEmptyState();

@@ -3,11 +3,10 @@ class Main {
 
     constructor() {
         this.managers = {
-            'taskListManager': new TaskListManager(),
+            'taskManager': new TaskManager(),
+            'listManager': new ListManager(),
         }
     }
-
-
 }
 
 window.onload = () => {
