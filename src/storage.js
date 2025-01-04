@@ -1,6 +1,7 @@
 class Storage {
     tasks = {};
     lists = {};
+    screen;
 
     constructor() {
         this.load();

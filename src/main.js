@@ -5,6 +5,7 @@ class Main {
         this.managers = {
             'taskManager': new TaskManager(),
             'listManager': new ListManager(),
+            'screenManager': new ScreenManager(),
         }
     }
 }

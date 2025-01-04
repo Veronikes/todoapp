@@ -18,6 +18,7 @@ class ListManager {
         this.renderList(list);
         window.Storage.save();
         nameInput.value = '';
+        window.dispatchEvent(new CustomEvent("list-created", {"detail": {"list": list}}));
     }
     
     initializeEvents() {
