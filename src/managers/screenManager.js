@@ -2,7 +2,7 @@ class ScreenManager{
 
     constructor(){
         this.load();
-        this.highlight();
+        setTimeout(this.highlight,50);
     }
 
     load(){

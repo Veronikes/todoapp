@@ -3,9 +3,9 @@ class Main {
 
     constructor() {
         this.managers = {
+            'screenManager': new ScreenManager(),
             'taskManager': new TaskManager(),
             'listManager': new ListManager(),
-            'screenManager': new ScreenManager(),
         }
     }
 }

@@ -3,23 +3,24 @@ class Task {
     id;
     name;
     list;
+    completed;
+    rewarded;
 
-    constructor(name, listId) {
+    constructor(name, listId, completed = false, rewarded = false) {
         this.id = crypto.randomUUID();
         this.name = name;
         this.list = listId;
-        
+        this.completed = completed;
+        this.rewarded = rewarded;
     }
 
     render() {
         const list = window.Storage.lists[this.list];
-        console.log(list);
-        console.log(window.Storage.lists);
 
         return `
 			<div data-task-id="${this.id}" class="flex flex-row justify-between gap-2 p-2">
                 <div>	
-                    <input type="checkbox"/>
+                    <input data-task-checkbox type="checkbox" ${this.completed ? 'checked="checked"' : ''}/>
                     <span>${this.name}</span>
                 </div>
                 <div class="flex flex-row items-center gap-2">
@@ -35,10 +36,6 @@ class Task {
                 </div>
 			</div>
         `;
-    }
-
-    static load(json) {
-        return Object.assign(this, json);
     }
 
 }

@@ -34,8 +34,8 @@
 <body class="font-['Open_Sans']">
 <div class="container mx-auto max-md:p-4">
 
-	<div class="flex flex-col md:flex-row gap-8 h-screen md:py-16">
-		<div class="w-full md:w-72 grow shrink-0 bg-neutral-100/60 md:m-4 rounded-xl p-6 space-y-4">
+	<div class="flex flex-col md:flex-row gap-8 md:py-16">
+		<div class="w-full md:w-72 md:sticky h-full md:top-16 grow shrink-0 bg-neutral-100/60 md:m-4 rounded-xl p-6 space-y-4">
 			<div class="flex flex-row justify-between items-center text-neutral-600">
 				<span class="text-xl">Menu</span>
 				<div class="flex flex-col items-end text-neutral-600 text-sm">
@@ -48,7 +48,7 @@
 						</svg>
 						<span>Moje body</span>
 					</div>
-					<span>139</span>
+					<span data-score>0</span>
 				</div>
 			</div>
 			<hr>
@@ -75,7 +75,7 @@
 						<button type="button" id="add-list">Přidat</button>
 					</div>
 					<div>
-						<div id="list-list-empty" class="flex flex-col items-center bg-neutral-50 rounded-lg p-8 text-neutral-400">
+						<div id="list-list-empty" class="flex flex-col items-center rounded-lg text-neutral-400">
 							<span>Zatím nemáš přidaný žádný seznam...</span>
 						</div>
 					</div>
@@ -89,7 +89,6 @@
 
 				<h1 class="flex flex-row items-center text-4xl gap-4">
 					<span class="font-bold"> Seznam úkolů </span>
-					<span class="p-2 border border-neutral-200 rounded-lg">5</span>
 				</h1>
 			</div>
 
@@ -106,7 +105,17 @@
 					<div id="task-list-empty" class="flex flex-col items-center bg-neutral-50 rounded-lg p-8 text-neutral-400">
 						<span>Zatím nemáš přidaný žádný úkol!</span>
 					</div>
-					<div class="flex flex-col divide-y text-neutral-600 font-medium" id="task-list">
+					<div class="flex flex-col gap-8">
+						<div id="task-list-wrapper" class="hidden">
+							<span class="text-neutral-400 text-sm">Aktuální úkoly</span>
+							<div class="flex flex-col divide-y text-neutral-600 font-medium" id="task-list">
+							</div>
+						</div>
+						<div id="completed-task-list-wrapper" class="hidden">
+							<span class="text-neutral-400 text-sm">Dokončené úkoly</span>
+							<div class="flex flex-col divide-y text-neutral-600 font-medium" id="completed-task-list">
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
